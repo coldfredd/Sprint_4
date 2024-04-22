@@ -13,7 +13,6 @@ import static junit.framework.TestCase.assertTrue;
 
 @RunWith(Parameterized.class)
 public class AccordionTest {
-
     private static final String BROWSER = "chrome";
     private WebDriver webDriver;
     private final int index;
@@ -44,7 +43,6 @@ public class AccordionTest {
         webDriver = WebDriverFactory.getWebDriver(BROWSER);
         webDriver.get("https://qa-scooter.praktikum-services.ru/");
     }
-
     @Test
     public void accordionTest(){
         MainPage mainPage = new MainPage(webDriver);

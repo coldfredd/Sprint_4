@@ -42,7 +42,6 @@ public class OrderPage {
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();",stationMenu);
         stationMenu.click();
 
-
         WebElement phoneInput = webDriver.findElement(phoneInputLocator);
         phoneInput.sendKeys(phone);
     }
@@ -57,7 +56,6 @@ public class OrderPage {
         
         WebElement dateInput = webDriver.findElement(dateInputLocator);
         dateInput.sendKeys(date, Keys.ENTER);
-
         
         WebElement rentPeriodInput = webDriver.findElement(rentalPeriodLocator);
         rentPeriodInput.click();
@@ -73,14 +71,12 @@ public class OrderPage {
     }
 
     public void clickOrderAcceptButton () {//кнопка Да
-
         WebElement orderAcceptButton = webDriver.findElement(orderAcceptButtonLocator);
         orderAcceptButton.click();
         new WebDriverWait(webDriver, ofSeconds(5)).until(ExpectedConditions.visibilityOfAllElementsLocatedBy(orderProcessedLocator));
     }
 
     public boolean orderProcessedIsDisplayed () {//Проверка на успешный заказ
-
         return webDriver.findElement(orderProcessedLocator).isDisplayed();
     }
 
