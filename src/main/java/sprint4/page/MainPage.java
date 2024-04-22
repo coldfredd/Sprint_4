@@ -54,13 +54,11 @@ public class MainPage {
     // Заказ самоката. Нужно проверить весь флоу позитивного сценария с двумя наборами данных. Проверить точки входа в сценарий, их две: кнопка «Заказать» вверху страницы и внизу.
 
     public void clickCreateOrderTop(){ // Клик на кнопку Заказать
-
         WebElement createOrderTopButton = webDriver.findElement(createOrderButtonTopLocator);
         createOrderTopButton.click();
     }
 
     public void clickCreateOrderLower(){ // Клик на кнопку Заказать
-
         WebElement createOrderLowerButton = webDriver.findElement(createOrderButtonLowerLocator);
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();",createOrderLowerButton);
         new WebDriverWait(webDriver,ofSeconds(3)).until(ExpectedConditions.elementToBeClickable(createOrderLowerButton));
@@ -70,15 +68,11 @@ public class MainPage {
     public void closeCookiesWindow() { // Закрытие окна куки
         webDriver.findElement(cookiesButtonLocator).click();
     }
-
     public void expandQuestion(int index) { // клик на список
         WebElement element = webDriver.findElement(By.id(String.format(questionLocator, index)));
-
         ((JavascriptExecutor) webDriver).executeScript("arguments[0].scrollIntoView();",element);
-
         new WebDriverWait(webDriver,ofSeconds(3)).until(ExpectedConditions.elementToBeClickable(element));
         element.click();
-
     }
 
     public boolean answerIsDisplayed(String expectedAnswer) { // Проверка текста из списка

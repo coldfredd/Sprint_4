@@ -16,7 +16,6 @@ public class OrderTest {
 
     @Before
     public void setup(){
-
         webDriver = WebDriverFactory.getWebDriver(BROWSER);
         webDriver.get("https://qa-scooter.praktikum-services.ru/");
     }
